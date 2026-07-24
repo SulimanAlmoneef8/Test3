@@ -13,4 +13,17 @@ for score in students.values():
 average = total/len(students)
 print("Class Average: ", average)
 
-highest = max(students.values())
+highest_student = max(students, key=students.get)
+print("Top Student:", highest_student)
+print("Highest Score:", students[highest_student])
+
+lowest_student = min(students, key=students.get)
+print("Bottom Student:", lowest_student)
+print("Lowest Score:", students[lowest_student])
+
+name = input("Enter student name: ")
+
+if name in students:
+    print(name, "Scored", students[name])
+else:
+    print("Student not found")
